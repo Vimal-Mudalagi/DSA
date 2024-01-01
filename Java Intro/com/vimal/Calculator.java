@@ -1,14 +1,46 @@
 package com.vimal;
-
 import java.util.Scanner;
 
 public class Calculator {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        //Take input from user untill user does not press X or x
+        Scanner scanner = new Scanner(System.in);
 
-        while (true){
+        System.out.println("Enter the first number: ");
+        int num1 = scanner.nextInt();
 
+        System.out.println("Enter the second number: ");
+        int num2 = scanner.nextInt();
+
+        System.out.print("Enter the operation: + - * % / : ");
+           char operation = scanner.next().trim().charAt(0);
+           int answer = 0;
+
+            if (operation == '+' || operation == '-' || operation == '*' || operation == '/' || operation == '%') {
+
+
+
+                if (operation == '+') {
+                    answer = num1 + num2;
+                }
+                if (operation == '-') {
+                    answer = num1 - num2;
+                }
+                if (operation == '*') {
+                    answer = num1 * num2;
+                }
+                if (operation == '/') {
+                    if (num2 != 0) {
+                        answer = num1 / num2;
+                    }
+                }
+                if (operation == '%') {
+                    answer = num1 % num2;
+                }
+
+            } else {
+                System.out.println("Invalid operation!!");
+            }
+
+            System.out.println(answer);
         }
-    }
-}
+   }
